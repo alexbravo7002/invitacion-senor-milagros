@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Señor de los Milagros</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top, #5d3975 0%, #24132f 45%, #100914 100%);
+  color: #f8efd8;
+  display: flex;
+  justify-content: center;
+  padding: 20px 12px;
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  min-height: 92vh;
+  border: 1px solid rgba(218, 184, 105, 0.65);
+  border-radius: 22px;
+  padding: 28px 22px 32px;
+  text-align: center;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(35, 18, 48, 0.96),
+      rgba(17, 9, 22, 0.98)
+    );
+  box-shadow: 0 15px 50px rgba(0,0,0,0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before,
+.card::after {
+  content: "✦";
+  position: absolute;
+  color: #d8b86a;
+  font-size: 28px;
+}
+
+.card::before {
+  top: 16px;
+  left: 20px;
+}
+
+.card::after {
+  top: 16px;
+  right: 20px;
+}
+
+.small {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #d8b86a;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.cross {
+  margin: 18px auto 10px;
+  font-size: 70px;
+  line-height: 1;
+  color: #d8b86a;
+  text-shadow: 0 0 18px rgba(216,184,106,0.25);
+}
+
+h1 {
+  margin: 5px 0;
+  font-size: 31px;
+  letter-spacing: 2px;
+  color: #f5df9d;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 17px;
+  font-style: italic;
+  color: #d9c8df;
+  margin: 8px 0 25px;
+}
+
+.line {
+  width: 75%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d8b86a,
+    transparent
+  );
+  margin: 18px auto;
+}
+
+.invited {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #cdb9d4;
+  text-transform: uppercase;
+}
+
+.name {
+  margin: 8px 0 20px;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+.message {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #eee2ed;
+}
+
+.details {
+  margin: 25px 0;
+  padding: 18px;
+  border: 1px solid rgba(216,184,106,0.45);
+  border-radius: 15px;
+  background: rgba(255,255,255,0.035);
+}
+
+.detail {
+  margin: 11px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.detail strong {
+  color: #e1c77d;
+}
+
+.buttons {
+  margin-top: 25px;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 16px 12px;
+  margin: 12px 0;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 0.2s;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.confirm {
+  background: linear-gradient(135deg, #d8b86a, #b98b35);
+  color: #24132f;
+}
+
+.location {
+  border: 1px solid #d8b86a;
+  color: #f2dda2;
+  background: rgba(216,184,106,0.08);
+}
+
+.footer {
+  margin-top: 28px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #bcaec0;
+}
+
+.deadline {
+  color: #e0c77e;
+  font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="small">Una ocasión especial</div>
+
+  <div class="cross">✝</div>
+
+  <h1>Señor de los Milagros</h1>
+
+  <div class="subtitle">
+    Con fe y devoción, queremos compartir este momento contigo
+  </div>
+
+  <div class="line"></div>
+
+  <div class="invited">Invitación personal para</div>
+
+  <div class="name" id="nombre">Flor Avila</div>
+
+  <div class="message">
+    Con mucha alegría y devoción queremos invitarte
+    a acompañarnos en la celebración en honor al
+    <strong>Señor de los Milagros</strong>.
+  </div>
+
+  <div class="details">
+
+    <div class="detail">
+      <strong>17 de octubre</strong>
+    </div>
+
+    <div class="detail">
+      Santa Misa y recepción
+    </div>
+
+    <div class="detail">
+      <strong>Av. Héroes del Pacífico 1285</strong><br>
+      La Paz
+    </div>
+
+  </div>
+
+  <div class="message">
+    Será una alegría contar con tu presencia
+    en este momento tan especial.
+  </div>
+
+  <div class="buttons">
+
+    <a
+      class="button confirm"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSfQEAjmabx2UHBlVbkbhsR7bJVMYZYeaUIkEvq8iQ_gmzEfpw/viewform?usp=header"
+      target="_blank">
+      CONFIRMAR MI ASISTENCIA
+    </a>
+
+    <a
+      class="button location"
+      href="https://www.google.com/maps/search/?api=1&query=Av.+H%C3%A9roes+del+Pac%C3%ADfico+1285%2C+La+Paz%2C+Bolivia"
+      target="_blank">
+      VER UBICACIÓN
+    </a>
+
+  </div>
+
+  <div class="footer">
+    Agradeceremos confirmar tu asistencia
+    hasta el <span class="deadline">10 de octubre</span>,
+    para poder preparar cada detalle con cariño.
+  </div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const nombre = params.get("nombre");
+
+if (nombre) {
+  document.getElementById("nombre").textContent =
+    nombre.replace(/\+/g, " ");
+}
+
+</script>
+
+</body>
+</html>
