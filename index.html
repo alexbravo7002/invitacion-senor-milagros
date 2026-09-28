@@ -23,18 +23,12 @@
   --text: #40363d;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   background: #ddd2c2;
   color: var(--text);
   font-family: Georgia, "Times New Roman", serif;
 }
-
-/* CONTENEDOR */
 
 .invitation {
   width: 100%;
@@ -45,8 +39,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-/* DECORACIÓN */
 
 .invitation::before {
   content: "";
@@ -114,7 +106,7 @@ body {
   );
 }
 
-/* TÍTULO PRINCIPAL */
+/* TITULO */
 
 .hero {
   text-align: center;
@@ -161,17 +153,16 @@ body {
   line-height: 1.55;
 }
 
-/* BANDA MORADA */
+/* INVITADO */
 
 .purple-band {
   margin: 5px 0 0;
   padding: 25px 25px 28px;
-  background:
-    linear-gradient(
-      135deg,
-      var(--purple-dark),
-      var(--purple)
-    );
+  background: linear-gradient(
+    135deg,
+    var(--purple-dark),
+    var(--purple)
+  );
   color: white;
   text-align: center;
   position: relative;
@@ -214,7 +205,7 @@ body {
 /* DETALLES */
 
 .details {
-  padding: 28px 28px 10px;
+  padding: 30px 28px 10px;
   position: relative;
   z-index: 2;
 }
@@ -223,13 +214,13 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  margin-bottom: 23px;
+  margin-bottom: 25px;
 }
 
 .detail-icon {
-  width: 43px;
-  height: 43px;
-  min-width: 43px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
   border: 1px solid var(--gold-light);
   border-radius: 50%;
   display: flex;
@@ -237,8 +228,37 @@ body {
   justify-content: center;
   color: var(--purple);
   background: var(--cream-dark);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: bold;
+}
+
+/* ICONO DE UBICACION */
+
+.location-icon {
+  position: relative;
+}
+
+.location-icon::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--purple);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+
+.location-icon::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: var(--purple);
+  border-radius: 50%;
+  position: absolute;
+  top: 17px;
+  left: 20px;
 }
 
 .detail-content {
@@ -258,6 +278,7 @@ body {
   font-size: 21px;
   font-weight: bold;
   margin-top: 4px;
+  text-transform: none;
 }
 
 .detail-text {
@@ -272,7 +293,7 @@ body {
   color: var(--purple-soft);
   font-size: 16px;
   font-style: italic;
-  margin: 4px 0 22px;
+  margin: 5px 0 22px;
 }
 
 /* VESTIMENTA */
@@ -290,6 +311,7 @@ body {
   font-size: 12px;
   letter-spacing: 5px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .dress-main {
@@ -341,7 +363,7 @@ body {
   border: 1px solid var(--gold);
 }
 
-/* CONFIRMACIÓN */
+/* CONFIRMACION */
 
 .rsvp {
   padding: 22px 30px 15px;
@@ -376,8 +398,6 @@ body {
   margin-bottom: 4px;
 }
 
-/* PIE */
-
 .footer {
   text-align: center;
   padding: 0 25px 22px;
@@ -385,7 +405,7 @@ body {
   font-size: 10px;
 }
 
-/* MÓVIL */
+/* MOVIL */
 
 @media (max-width: 430px) {
 
@@ -423,6 +443,14 @@ body {
   .details {
     padding-left: 22px;
     padding-right: 22px;
+  }
+
+  .detail-main {
+    font-size: 20px;
+  }
+
+  .detail-text {
+    font-size: 15px;
   }
 
   .dress {
@@ -549,9 +577,7 @@ body {
 
     <div class="detail">
 
-      <div class="detail-icon">
-        T
-      </div>
+      <div class="detail-icon location-icon"></div>
 
       <div class="detail-content">
 
@@ -645,7 +671,6 @@ body {
   <div class="footer">
     Aurora Morón y Alejandro Bravo · Señor de los Milagros
   </div>
-
 
 </div>
 
