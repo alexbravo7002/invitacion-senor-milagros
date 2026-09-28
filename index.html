@@ -13,13 +13,14 @@
 }
 
 :root {
-  --cream: #f8f3e9;
-  --cream2: #eee5d5;
-  --purple: #4b245f;
-  --purple-dark: #32173f;
+  --purple: #54265f;
+  --purple-dark: #3b1747;
+  --purple-soft: #76537d;
   --gold: #b28a3d;
-  --gold-light: #d4b66c;
-  --text: #352b31;
+  --gold-light: #d6bc7a;
+  --cream: #f8f3e8;
+  --cream-dark: #eee4d2;
+  --text: #40363d;
 }
 
 html {
@@ -28,12 +29,12 @@ html {
 
 body {
   margin: 0;
-  background: #e9dfd0;
+  background: #ddd2c2;
   color: var(--text);
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR */
 
 .invitation {
   width: 100%;
@@ -41,48 +42,48 @@ body {
   min-height: 100vh;
   margin: 0 auto;
   background: var(--cream);
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
-/* DECORACIÓN SUPERIOR */
+/* DECORACIÓN */
 
 .invitation::before {
   content: "";
   position: absolute;
-  top: -45px;
-  left: -45px;
-  width: 95px;
-  height: 95px;
-  border: 1px solid rgba(178,138,61,.45);
+  width: 170px;
+  height: 170px;
+  border: 1px solid rgba(178,138,61,.35);
   border-radius: 50%;
+  top: -105px;
+  left: -75px;
 }
 
 .invitation::after {
   content: "";
   position: absolute;
-  bottom: -55px;
-  right: -55px;
-  width: 120px;
-  height: 120px;
-  border: 1px solid rgba(178,138,61,.4);
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(178,138,61,.35);
   border-radius: 50%;
+  bottom: -115px;
+  right: -80px;
 }
 
 /* CABECERA */
 
 .header {
   text-align: center;
-  padding: 28px 28px 12px;
+  padding: 38px 28px 20px;
   position: relative;
   z-index: 2;
 }
 
 .ornament {
   color: var(--gold);
-  font-size: 24px;
-  letter-spacing: 13px;
-  margin-bottom: 13px;
+  font-size: 25px;
+  letter-spacing: 10px;
+  margin-bottom: 20px;
 }
 
 .hosts {
@@ -90,21 +91,21 @@ body {
   font-size: 17px;
   letter-spacing: 2px;
   font-weight: bold;
+  line-height: 1.5;
   text-transform: uppercase;
-  line-height: 1.55;
 }
 
 .hosts-invite {
-  margin-top: 3px;
   color: #806b78;
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
+  margin-top: 6px;
 }
 
-.line {
-  width: 55%;
+.header-line {
+  width: 58%;
   height: 1px;
-  margin: 17px auto 18px;
+  margin: 20px auto 0;
   background: linear-gradient(
     to right,
     transparent,
@@ -113,217 +114,172 @@ body {
   );
 }
 
-/* INTRODUCCIÓN */
+/* TÍTULO PRINCIPAL */
 
-.intro {
-  padding: 4px 28px 10px;
+.hero {
   text-align: center;
+  padding: 18px 25px 26px;
+  position: relative;
+  z-index: 2;
 }
 
-.honor {
+.small-title {
   color: var(--purple);
-  font-size: 14px;
-  letter-spacing: 5px;
+  font-size: 13px;
+  letter-spacing: 6px;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 13px;
 }
 
-.title {
+.main-title {
+  margin: 0;
   color: var(--purple);
-  font-size: clamp(37px, 10vw, 58px);
-  line-height: .98;
+  font-size: clamp(42px, 11vw, 66px);
+  line-height: .94;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: bold;
-  margin: 0;
 }
 
-.subtitle {
+.title-ornament {
   color: var(--gold);
-  font-size: 15px;
+  font-size: 24px;
+  margin: 15px 0 13px;
+}
+
+.motto {
+  color: var(--gold);
+  font-size: 14px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  margin: 18px 0 12px;
 }
 
-.intro-text {
-  max-width: 510px;
-  margin: 0 auto;
+.intro {
+  max-width: 500px;
+  margin: 19px auto 0;
   font-size: 17px;
   line-height: 1.55;
 }
 
-/* ZONA DE IMAGEN */
+/* BANDA MORADA */
 
-.image-zone {
-  position: relative;
-  margin-top: 18px;
-  height: 420px;
-  overflow: hidden;
-  background: var(--purple-dark);
-}
-
-/* arco decorativo */
-
-.image-zone::before {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  top: -15%;
-  left: 49%;
-  width: 58%;
-  height: 130%;
-  border-left: 5px solid var(--gold-light);
-  border-radius: 50%;
-  transform: rotate(-4deg);
-  pointer-events: none;
-}
-
-.image-zone::after {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  top: -15%;
-  left: 46%;
-  width: 61%;
-  height: 130%;
-  border-left: 2px solid rgba(255,255,255,.55);
-  border-radius: 50%;
-  transform: rotate(-4deg);
-  pointer-events: none;
-}
-
-/* imagen */
-
-.image-zone img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 59%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: saturate(.92) contrast(1.04);
-}
-
-/* panel crema sobre la imagen */
-
-.image-panel {
-  position: absolute;
-  z-index: 4;
-  left: 0;
-  top: 0;
-  width: 59%;
-  height: 100%;
-  background: linear-gradient(
-    100deg,
-    var(--cream) 0%,
-    var(--cream) 74%,
-    rgba(248,243,233,.88) 91%,
-    rgba(248,243,233,0) 100%
-  );
-}
-
-/* INVITADO */
-
-.guest {
-  position: relative;
-  z-index: 6;
-  margin-top: -2px;
-  padding: 18px 27px 13px;
+.purple-band {
+  margin: 5px 0 0;
+  padding: 25px 25px 28px;
+  background:
+    linear-gradient(
+      135deg,
+      var(--purple-dark),
+      var(--purple)
+    );
+  color: white;
   text-align: center;
+  position: relative;
+}
+
+.purple-band::before {
+  content: "✦";
+  position: absolute;
+  top: 10px;
+  left: 28px;
+  color: var(--gold-light);
+  font-size: 16px;
+}
+
+.purple-band::after {
+  content: "✦";
+  position: absolute;
+  top: 10px;
+  right: 28px;
+  color: var(--gold-light);
+  font-size: 16px;
 }
 
 .guest-type {
-  color: var(--purple);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 4px;
   text-transform: uppercase;
+  color: var(--gold-light);
 }
 
 .guest-name {
-  color: var(--gold);
-  font-size: clamp(39px, 10vw, 58px);
-  line-height: 1;
-  margin-top: 7px;
-  font-style: italic;
+  margin-top: 9px;
   font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-weight: 500;
-}
-
-.guest-line {
-  width: 45%;
-  height: 1px;
-  margin: 13px auto 0;
-  background: var(--gold);
+  font-size: clamp(43px, 11vw, 62px);
+  line-height: 1;
+  color: #f1d58c;
+  font-style: italic;
 }
 
 /* DETALLES */
 
 .details {
+  padding: 28px 28px 10px;
   position: relative;
-  z-index: 6;
-  padding: 12px 30px 8px;
+  z-index: 2;
 }
 
-.detail-row {
+.detail {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
-  margin: 14px 0;
+  gap: 16px;
+  margin-bottom: 23px;
 }
 
-.icon {
-  width: 39px;
-  height: 39px;
-  min-width: 39px;
+.detail-icon {
+  width: 43px;
+  height: 43px;
+  min-width: 43px;
+  border: 1px solid var(--gold-light);
   border-radius: 50%;
-  background: #eee3d0;
-  border: 1px solid rgba(178,138,61,.25);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--purple);
-  font-size: 19px;
+  background: var(--cream-dark);
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .detail-content {
-  flex: 1;
+  padding-top: 1px;
 }
 
-.detail-title {
-  color: var(--purple);
-  font-size: 17px;
+.detail-label {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 3px;
   font-weight: bold;
-  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .detail-main {
   color: var(--purple);
-  font-size: 18px;
+  font-size: 21px;
   font-weight: bold;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .detail-text {
-  font-size: 15px;
+  color: var(--text);
+  font-size: 16px;
   line-height: 1.45;
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 .reception {
   text-align: center;
-  color: #6d5a66;
+  color: var(--purple-soft);
+  font-size: 16px;
   font-style: italic;
-  font-size: 15px;
-  margin: 10px 0 17px;
+  margin: 4px 0 22px;
 }
 
 /* VESTIMENTA */
 
 .dress {
-  margin: 4px 30px 16px;
-  padding: 15px 15px;
+  margin: 0 28px 22px;
+  padding: 18px 15px;
   text-align: center;
   border-top: 1px solid var(--gold-light);
   border-bottom: 1px solid var(--gold-light);
@@ -332,52 +288,51 @@ body {
 .dress-title {
   color: var(--gold);
   font-size: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+  letter-spacing: 5px;
   font-weight: bold;
 }
 
 .dress-main {
   color: var(--purple);
-  font-size: 20px;
+  font-size: 21px;
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .dress-note {
-  color: #766671;
-  font-size: 13px;
+  color: var(--purple-soft);
+  font-size: 14px;
   font-style: italic;
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 /* BOTONES */
 
 .buttons {
+  padding: 4px 28px 12px;
   position: relative;
-  z-index: 7;
-  padding: 5px 30px 8px;
+  z-index: 3;
 }
 
 .btn {
   display: block;
   width: 100%;
-  padding: 14px 12px;
-  margin: 10px 0;
+  padding: 15px 12px;
+  margin: 11px 0;
+  border-radius: 30px;
   text-align: center;
   text-decoration: none;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 2px;
-  border-radius: 28px;
 }
 
 .btn-primary {
   background: var(--purple);
   color: white;
   border: 1px solid var(--gold);
-  box-shadow: 0 4px 12px rgba(50,23,63,.18);
+  box-shadow: 0 5px 15px rgba(59,23,71,.18);
 }
 
 .btn-secondary {
@@ -389,11 +344,13 @@ body {
 /* CONFIRMACIÓN */
 
 .rsvp {
-  padding: 18px 30px 26px;
+  padding: 22px 30px 15px;
   text-align: center;
-  color: #6e5c67;
+  color: #766770;
   font-size: 14px;
   line-height: 1.65;
+  position: relative;
+  z-index: 2;
 }
 
 .rsvp strong {
@@ -403,29 +360,29 @@ body {
 /* CIERRE */
 
 .closing {
+  padding: 7px 28px 27px;
   text-align: center;
-  padding: 3px 30px 25px;
   color: var(--purple);
-  font-style: italic;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.5;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
 }
 
 .cross {
-  text-align: center;
   color: var(--gold);
-  font-size: 27px;
-  margin-bottom: 3px;
+  font-size: 28px;
+  margin-bottom: 4px;
 }
 
 /* PIE */
 
 .footer {
   text-align: center;
-  padding: 0 20px 18px;
-  color: #998b91;
+  padding: 0 25px 22px;
+  color: #a09399;
   font-size: 10px;
-  line-height: 1.4;
 }
 
 /* MÓVIL */
@@ -433,84 +390,66 @@ body {
 @media (max-width: 430px) {
 
   .header {
-    padding-left: 22px;
-    padding-right: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .hosts {
     font-size: 15px;
   }
 
-  .honor {
-    font-size: 12px;
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .main-title {
+    font-size: 43px;
   }
 
   .intro {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
-
-  .title {
-    font-size: 39px;
-  }
-
-  .intro-text {
     font-size: 16px;
   }
 
-  .image-zone {
-    height: 390px;
-  }
-
-  .guest {
+  .purple-band {
     padding-left: 20px;
     padding-right: 20px;
   }
 
   .guest-name {
-    font-size: 43px;
+    font-size: 45px;
   }
 
   .details {
-    padding-left: 23px;
-    padding-right: 23px;
+    padding-left: 22px;
+    padding-right: 22px;
   }
 
   .dress {
-    margin-left: 23px;
-    margin-right: 23px;
+    margin-left: 22px;
+    margin-right: 22px;
   }
 
   .buttons {
-    padding-left: 23px;
-    padding-right: 23px;
+    padding-left: 22px;
+    padding-right: 22px;
   }
 
   .rsvp {
-    padding-left: 23px;
-    padding-right: 23px;
+    padding-left: 22px;
+    padding-right: 22px;
   }
 
 }
 
-/* PANTALLAS MUY PEQUEÑAS */
-
 @media (max-width: 360px) {
 
-  .title {
-    font-size: 34px;
+  .main-title {
+    font-size: 37px;
   }
 
   .guest-name {
-    font-size: 38px;
-  }
-
-  .image-zone {
-    height: 350px;
-  }
-
-  .detail-text {
-    font-size: 14px;
+    font-size: 39px;
   }
 
 }
@@ -536,27 +475,31 @@ body {
       te invitan
     </div>
 
-    <div class="line"></div>
+    <div class="header-line"></div>
 
   </header>
 
 
-  <section class="intro">
+  <section class="hero">
 
-    <div class="honor">
+    <div class="small-title">
       En honor al
     </div>
 
-    <h1 class="title">
+    <h1 class="main-title">
       Señor de los<br>
       Milagros
     </h1>
 
-    <div class="subtitle">
+    <div class="title-ornament">
+      ✦
+    </div>
+
+    <div class="motto">
       Fe · Unión · Tradición
     </div>
 
-    <p class="intro-text">
+    <p class="intro">
       Con mucha alegría y devoción, queremos compartir contigo este momento
       especial y reunirnos en fe, esperanza y gratitud.
     </p>
@@ -564,18 +507,7 @@ body {
   </section>
 
 
-  <section class="image-zone">
-
-    <div class="image-panel"></div>
-
-    <img
-      src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cristo_Se%C3%B1or_de_los_Milagros.JPG"
-      alt="Señor de los Milagros">
-
-  </section>
-
-
-  <section class="guest">
+  <section class="purple-band">
 
     <div class="guest-type" id="guestType">
       INVITACIÓN UNIPERSONAL
@@ -585,27 +517,25 @@ body {
       Flor Avila
     </div>
 
-    <div class="guest-line"></div>
-
   </section>
 
 
   <section class="details">
 
-    <div class="detail-row">
+    <div class="detail">
 
-      <div class="icon">
-        ♧
+      <div class="detail-icon">
+        17
       </div>
 
       <div class="detail-content">
 
-        <div class="detail-title">
-          SÁBADO
+        <div class="detail-label">
+          Sábado
         </div>
 
         <div class="detail-main">
-          17 DE OCTUBRE
+          17 de octubre
         </div>
 
         <div class="detail-text">
@@ -617,16 +547,20 @@ body {
     </div>
 
 
-    <div class="detail-row">
+    <div class="detail">
 
-      <div class="icon">
-        ♜
+      <div class="detail-icon">
+        T
       </div>
 
       <div class="detail-content">
 
-        <div class="detail-title">
-          TORRE BIO-MÉDICA
+        <div class="detail-label">
+          Lugar
+        </div>
+
+        <div class="detail-main">
+          Torre Bio-médica
         </div>
 
         <div class="detail-text">
@@ -639,6 +573,7 @@ body {
 
     </div>
 
+
     <div class="reception">
       Al finalizar, compartiremos una recepción.
     </div>
@@ -649,7 +584,7 @@ body {
   <section class="dress">
 
     <div class="dress-title">
-      VESTIMENTA
+      Vestimenta
     </div>
 
     <div class="dress-main">
@@ -708,7 +643,7 @@ body {
 
 
   <div class="footer">
-    Imagen: Franz Lozada · Wikimedia Commons · CC BY-SA 4.0
+    Aurora Morón y Alejandro Bravo · Señor de los Milagros
   </div>
 
 
