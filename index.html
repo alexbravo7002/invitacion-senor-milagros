@@ -10,267 +10,522 @@
   box-sizing: border-box;
 }
 
+:root {
+  --cream: #f8f1e5;
+  --cream-dark: #eee1cf;
+  --purple: #4b245f;
+  --purple-dark: #32173f;
+  --gold: #b28a3d;
+  --gold-light: #d2b46a;
+  --text: #392b35;
+  --white: #fffdf9;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Georgia, "Times New Roman", serif;
   background:
-    radial-gradient(circle at top, #5d3975 0%, #24132f 45%, #100914 100%);
-  color: #f8efd8;
-  display: flex;
-  justify-content: center;
-  padding: 20px 12px;
+    radial-gradient(circle at 10% 5%, rgba(178,138,61,.12), transparent 25%),
+    radial-gradient(circle at 90% 95%, rgba(75,36,95,.10), transparent 28%),
+    var(--cream);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.page {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 18px 14px 35px;
 }
 
 .card {
-  width: 100%;
-  max-width: 500px;
-  min-height: 92vh;
-  border: 1px solid rgba(218, 184, 105, 0.65);
-  border-radius: 22px;
-  padding: 28px 22px 32px;
-  text-align: center;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(35, 18, 48, 0.96),
-      rgba(17, 9, 22, 0.98)
-    );
-  box-shadow: 0 15px 50px rgba(0,0,0,0.45);
   position: relative;
   overflow: hidden;
+  background: rgba(255,253,249,.96);
+  border: 1px solid rgba(178,138,61,.55);
+  box-shadow: 0 12px 35px rgba(50,23,63,.13);
+  padding: 28px 24px 34px;
 }
 
-.card::before,
-.card::after {
-  content: "✦";
+.card:before,
+.card:after {
+  content: "";
   position: absolute;
-  color: #d8b86a;
-  font-size: 28px;
+  width: 90px;
+  height: 90px;
+  border: 1px solid rgba(178,138,61,.25);
+  transform: rotate(45deg);
 }
 
-.card::before {
-  top: 16px;
-  left: 20px;
+.card:before {
+  top: -65px;
+  left: -65px;
 }
 
-.card::after {
-  top: 16px;
-  right: 20px;
+.card:after {
+  bottom: -65px;
+  right: -65px;
 }
 
-.small {
+.top-ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 23px;
+  letter-spacing: 8px;
+  margin-bottom: 10px;
+}
+
+.hosts {
+  text-align: center;
+  color: var(--purple);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.hosts-small {
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  color: #806b78;
+  margin-top: 2px;
+}
+
+.intro {
+  text-align: center;
+  margin: 24px auto 20px;
+  max-width: 500px;
+  color: #675463;
+  font-size: 17px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.divider span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+}
+
+.divider b {
+  color: var(--gold);
   font-size: 13px;
-  letter-spacing: 3px;
-  color: #d8b86a;
+}
+
+.title-small {
+  text-align: center;
+  color: var(--purple);
+  font-size: 14px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   margin-top: 10px;
 }
 
-.cross {
-  margin: 18px auto 10px;
-  font-size: 70px;
-  line-height: 1;
-  color: #d8b86a;
-  text-shadow: 0 0 18px rgba(216,184,106,0.25);
-}
-
-h1 {
-  margin: 5px 0;
-  font-size: 31px;
+.title {
+  text-align: center;
+  color: var(--purple);
+  font-size: clamp(31px, 9vw, 48px);
+  line-height: 1.05;
   letter-spacing: 2px;
-  color: #f5df9d;
+  margin: 7px 0 20px;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
-.subtitle {
-  font-size: 17px;
-  font-style: italic;
-  color: #d9c8df;
-  margin: 8px 0 25px;
+.image-frame {
+  width: min(100%, 310px);
+  margin: 0 auto 23px;
+  padding: 8px;
+  background: var(--white);
+  border: 1px solid rgba(178,138,61,.65);
+  box-shadow: 0 7px 20px rgba(50,23,63,.12);
 }
 
-.line {
-  width: 75%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #d8b86a,
-    transparent
-  );
-  margin: 18px auto;
+.image-frame img {
+  display: block;
+  width: 100%;
+  height: 265px;
+  object-fit: cover;
+  object-position: center;
 }
 
-.invited {
+.invitation-box {
+  text-align: center;
+  padding: 21px 15px 23px;
+  margin: 20px 0;
+  border-top: 1px solid rgba(178,138,61,.55);
+  border-bottom: 1px solid rgba(178,138,61,.55);
+}
+
+.invitation-type {
+  color: var(--gold);
   font-size: 14px;
-  letter-spacing: 2px;
-  color: #cdb9d4;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
-.name {
-  margin: 8px 0 20px;
-  font-size: 30px;
-  color: white;
+.guest-name {
+  color: var(--purple);
+  font-size: clamp(27px, 7vw, 38px);
+  line-height: 1.15;
+  margin-top: 9px;
   font-weight: bold;
 }
 
 .message {
+  text-align: center;
   font-size: 17px;
   line-height: 1.65;
-  color: #eee2ed;
+  margin: 24px 8px;
+  color: #4d3c47;
 }
 
 .details {
-  margin: 25px 0;
-  padding: 18px;
-  border: 1px solid rgba(216,184,106,0.45);
-  border-radius: 15px;
-  background: rgba(255,255,255,0.035);
+  margin-top: 26px;
+  padding: 22px 17px;
+  background: linear-gradient(145deg, rgba(75,36,95,.055), rgba(178,138,61,.08));
+  border: 1px solid rgba(178,138,61,.48);
 }
 
-.detail {
-  margin: 11px 0;
+.detail-label {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+.date {
+  color: var(--purple);
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 8px 0 3px;
+}
+
+.time {
+  color: var(--purple);
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.mass {
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.location-title {
+  text-align: center;
+  color: var(--purple);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.address {
+  text-align: center;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.55;
+  margin-top: 5px;
 }
 
-.detail strong {
-  color: #e1c77d;
+.reception {
+  text-align: center;
+  margin-top: 17px;
+  font-size: 16px;
+  color: #66515f;
+  font-style: italic;
+}
+
+.dress {
+  text-align: center;
+  margin: 27px 0;
+  padding: 19px 12px;
+  border-left: 3px solid var(--gold);
+  border-right: 3px solid var(--gold);
+}
+
+.dress-title {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.dress-main {
+  color: var(--purple);
+  font-size: 21px;
+  font-weight: bold;
+  margin: 7px 0;
+}
+
+.dress-note {
+  font-size: 14px;
+  font-style: italic;
+  color: #776673;
+}
+
+.closing {
+  text-align: center;
+  color: var(--purple);
+  font-size: 20px;
+  line-height: 1.5;
+  font-style: italic;
+  margin: 29px 10px 25px;
 }
 
 .buttons {
-  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 auto 25px;
+  max-width: 430px;
 }
 
-.button {
+.btn {
   display: block;
   width: 100%;
-  padding: 16px 12px;
-  margin: 12px 0;
-  border-radius: 30px;
+  text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  padding: 16px 14px;
+  border-radius: 2px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  letter-spacing: 1.5px;
   font-weight: bold;
-  letter-spacing: 1px;
-  transition: transform 0.2s;
+  transition: transform .15s ease;
 }
 
-.button:active {
-  transform: scale(0.97);
+.btn:active {
+  transform: scale(.98);
 }
 
-.confirm {
-  background: linear-gradient(135deg, #d8b86a, #b98b35);
-  color: #24132f;
+.btn-primary {
+  background: var(--purple);
+  color: #fffdf9;
+  border: 1px solid var(--purple);
 }
 
-.location {
-  border: 1px solid #d8b86a;
-  color: #f2dda2;
-  background: rgba(216,184,106,0.08);
+.btn-secondary {
+  background: transparent;
+  color: var(--purple);
+  border: 1px solid var(--gold);
+}
+
+.rsvp {
+  text-align: center;
+  color: #6d5b67;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 23px 8px 0;
+}
+
+.rsvp strong {
+  color: var(--purple);
 }
 
 .footer {
-  margin-top: 28px;
-  font-size: 13px;
-  line-height: 1.6;
-  color: #bcaec0;
+  text-align: center;
+  color: #9a8792;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 25px;
 }
 
-.deadline {
-  color: #e0c77e;
-  font-weight: bold;
-}
+@media (max-width: 390px) {
+  .page {
+    padding: 10px 8px 25px;
+  }
 
+  .card {
+    padding: 23px 18px 30px;
+  }
+
+  .intro,
+  .message {
+    font-size: 16px;
+  }
+
+  .image-frame img {
+    height: 235px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="page">
+  <main class="card">
 
-  <div class="small">Una ocasión especial</div>
+    <div class="top-ornament">✦ ✧ ✦</div>
 
-  <div class="cross">✝</div>
-
-  <h1>Señor de los Milagros</h1>
-
-  <div class="subtitle">
-    Con fe y devoción, queremos compartir este momento contigo
-  </div>
-
-  <div class="line"></div>
-
-  <div class="invited">Invitación personal para</div>
-
-  <div class="name" id="nombre">Flor Avila</div>
-
-  <div class="message">
-    Con mucha alegría y devoción queremos invitarte
-    a acompañarnos en la celebración en honor al
-    <strong>Señor de los Milagros</strong>.
-  </div>
-
-  <div class="details">
-
-    <div class="detail">
-      <strong>17 de octubre</strong>
+    <div class="hosts">
+      Aurora Morón y Alejandro Bravo
     </div>
 
-    <div class="detail">
-      Santa Misa y recepción
+    <div class="hosts-small">
+      te invitan
     </div>
 
-    <div class="detail">
-      <strong>Av. Héroes del Pacífico 1285</strong><br>
-      La Paz
+    <div class="divider">
+      <span></span>
+      <b>✦</b>
+      <span></span>
     </div>
 
-  </div>
+    <div class="title-small">
+      En honor al
+    </div>
 
-  <div class="message">
-    Será una alegría contar con tu presencia
-    en este momento tan especial.
-  </div>
+    <div class="title">
+      Señor de los<br>Milagros
+    </div>
 
-  <div class="buttons">
+    <div class="image-frame">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Se%C3%B1or_De_Los_Milagros_.jpg"
+        alt="Señor de los Milagros">
+    </div>
 
-    <a
-      class="button confirm"
-      href="https://docs.google.com/forms/d/e/1FAIpQLSfQEAjmabx2UHBlVbkbhsR7bJVMYZYeaUIkEvq8iQ_gmzEfpw/viewform?usp=header"
-      target="_blank">
-      CONFIRMAR MI ASISTENCIA
-    </a>
+    <p class="intro">
+      Con mucha alegría y devoción, queremos compartir contigo este momento
+      especial y reunirnos en fe, esperanza y gratitud.
+    </p>
 
-    <a
-      class="button location"
-      href="https://www.google.com/maps/search/?api=1&query=Av.+H%C3%A9roes+del+Pac%C3%ADfico+1285%2C+La+Paz%2C+Bolivia"
-      target="_blank">
-      VER UBICACIÓN
-    </a>
+    <div class="invitation-box">
+      <div class="invitation-type" id="invitationType">
+        Invitación unipersonal
+      </div>
 
-  </div>
+      <div class="guest-name" id="guestName">
+        Flor Avila
+      </div>
+    </div>
 
-  <div class="footer">
-    Agradeceremos confirmar tu asistencia
-    hasta el <span class="deadline">10 de octubre</span>,
-    para poder preparar cada detalle con cariño.
-  </div>
+    <p class="message">
+      Será una alegría compartir este momento contigo.
+    </p>
 
+    <section class="details">
+
+      <div class="detail-label">Sábado</div>
+
+      <div class="date">
+        17 de octubre
+      </div>
+
+      <div class="time">
+        16:00
+      </div>
+
+      <div class="mass">
+        Santa Misa
+      </div>
+
+      <div class="location-title">
+        Torre Bio-médica
+      </div>
+
+      <div class="address">
+        Av. Héroes del Pacífico, Esq. Guerrilleros Lanza Nro. 1285<br>
+        La Paz
+      </div>
+
+      <div class="reception">
+        Al finalizar, compartiremos una recepción.
+      </div>
+
+    </section>
+
+    <section class="dress">
+      <div class="dress-title">Vestimenta</div>
+      <div class="dress-main">Elegante y sobria</div>
+      <div class="dress-note">
+        Una presentación especial para una ocasión especial.
+      </div>
+    </section>
+
+    <div class="divider">
+      <span></span>
+      <b>✦</b>
+      <span></span>
+    </div>
+
+    <div class="closing">
+      Será una alegría compartir este momento contigo.
+    </div>
+
+    <div class="buttons">
+
+      <a
+        class="btn btn-primary"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfQEAjmabx2UHBlVbkbhsR7bJVMYZYeaUIkEvq8iQ_gmzEfpw/viewform?usp=header"
+        target="_blank">
+        CONFIRMAR MI ASISTENCIA
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="https://www.google.com/maps/search/?api=1&query=Torre+Bio-m%C3%A9dica%2C+Av.+H%C3%A9roes+del+Pac%C3%ADfico%2C+Esq.+Guerrilleros+Lanza+Nro.+1285%2C+La+Paz%2C+Bolivia"
+        target="_blank">
+        VER UBICACIÓN
+      </a>
+
+    </div>
+
+    <div class="rsvp">
+      Para una correcta organización, agradeceremos confirmar su asistencia
+      hasta el <strong>7 de octubre</strong>.<br><br>
+
+      Si no recibimos su confirmación hasta esa fecha, comprenderemos que en
+      esta ocasión no podrá acompañarnos y guardaremos con cariño la esperanza
+      de compartir en una próxima oportunidad.
+    </div>
+
+    <div class="footer">
+      Imagen: C. Ivan A. H. · Wikimedia Commons · CC BY-SA 4.0
+    </div>
+
+  </main>
 </div>
 
 <script>
-
 const params = new URLSearchParams(window.location.search);
-const nombre = params.get("nombre");
 
-if (nombre) {
-  document.getElementById("nombre").textContent =
-    nombre.replace(/\+/g, " ");
+const nombre = params.get("nombre") || "Flor Avila";
+const nombre2 = params.get("nombre2") || "";
+const tipo = params.get("tipo") || "";
+
+const guestName = document.getElementById("guestName");
+const invitationType = document.getElementById("invitationType");
+
+if (nombre2.trim() !== "") {
+  guestName.textContent = nombre + " y " + nombre2;
+  invitationType.textContent = "Invitación bipersonal";
+} else if (tipo.toLowerCase() === "bipersonal") {
+  guestName.textContent = nombre;
+  invitationType.textContent = "Invitación bipersonal";
+} else {
+  guestName.textContent = nombre;
+  invitationType.textContent = "Invitación unipersonal";
 }
-
 </script>
 
 </body>
